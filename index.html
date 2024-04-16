@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tareas a realizar</title>
+    <link rel="stylesheet" href="dragula.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <section id="contenedor">
+        <div>
+            <h1>Pendientes</h1>
+            <ul id="to-do">
+                <li>Hacer FOL</li> 
+                <li>Comerme un kebab</li>
+                <li>Jugarse unas partiditas y terminar misiones.</li>
+            </ul>
+
+        </div>
+
+        <div>
+            <h1>En progreso</h1>
+            <ul id="wip">
+                <li>Hacer la compra de la semana</li>
+                <li>Cocinar</li>
+                <li>Preparar trabajos de clase para la semana que viene</li>
+            </ul>
+
+        </div>
+
+        <div>
+            <h1>End</h1>
+            <ul id="end">
+                <li>Hacerme un colacao</li>
+                <li>Ducharme</li>
+                <li>Pelicula y a mimir</li>
+            </ul>
+        </div>
+        
+    </section>
+
+   <script src="\dragula.js"></script>
+   <script>
+    dragula([
+      document.querySelector('#to-do'), 
+      document.querySelector('#wip'),
+      document.querySelector('#end')
+    ])
+    .on('drag', function (el) {
+    console.log("El usuario ha arrastrado un elemento")
+    console.log(el)
+  }).on('drop', function (el) {
+    
+    console.log("El usuario ha soltado un elemento")
+});
+   </script>
+</body>
+</html>
